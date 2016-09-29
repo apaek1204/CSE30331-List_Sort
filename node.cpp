@@ -24,13 +24,10 @@ int void_number_compare(const void *a, const void *b) {
 int void_string_compare(const void *a, const void *b) {
     const Node** NodeA = (const Node**)a;
     const Node** NodeB = (const Node**)b;
-    std::cout << "b->str: " << (*NodeB)->string << std::endl;
-    const char* aSTR = *(const char**) (*NodeA)->string.c_str();
-    const char* bSTR = *(const char**) (*NodeB)->string.c_str();
-    std::cout << "bstr: " << bSTR<< std::endl;
-    int abc = strcmp(aSTR, bSTR);
+    const char* aSTR = (*NodeA)->string.c_str();
+    const char* bSTR = (*NodeB)->string.c_str();
     
-    return 0;
+    return strcmp(aSTR, bSTR);
 }
 
 void dump_node(Node *n) {
