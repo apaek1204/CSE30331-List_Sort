@@ -12,17 +12,17 @@ void qsort_sort(List &l, bool numeric) {
     for(auto curr = l.head; curr!=nullptr; curr = curr->next){
         nodeVec.push_back(curr);
     }
-
     if(numeric){
-        qsort(&nodeVec[0], l.size, sizeof(Node), void_number_compare);
+        qsort(nodeVec.data() , nodeVec.size(), sizeof(Node*), void_number_compare);
     }
+    
     else{
-        qsort(&nodeVec[0], l.size, sizeof(Node), void_string_compare);
+        qsort(nodeVec.data(), nodeVec.size(), sizeof(Node*), void_string_compare);
     }
-
     //relink nodes in array
     Node* curr;
-    curr = nodeVec[0];
+    l.head = nodeVec[0];
+    curr = l.head;
     for(size_t i=1; i<nodeVec.size(); i++){
         curr->next = nodeVec[i];
         curr = curr->next;
