@@ -11,7 +11,7 @@ This is a simple implementation of the Unix [sort] utility that works on
 Questions
 ---------
 
-1.  |  algorithm  |    worst   |  average   |    best    |  
+1. |  algorithm  |    worst   |  average   |    best    |  
 |---|---|---|---|      
 |     STL     |  O(nlogn)  |  O(nlogn)  |  O(nlogn)  |       
 |    qsort    |  O(nlogn0  |  O(nlogn)  |  O(nlogn) | 
