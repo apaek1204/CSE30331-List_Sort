@@ -19,7 +19,7 @@ Questions
       | quick sort  |  O(n^2)    |  O(nlogn)  |  O(nlogn)  |
 
 
-2.  | Mode    | Size  | Elapsed Time  | Memory    |
+2.```  | Mode    | Size  | Elapsed Time  | Memory    |
 |---------|-------|---------------|-----------|
 | stl | 10 | 0.001998 seconds | 1.179688 Mbytes |
 | stl | 100 | 0.001998 seconds | 1.191406 Mbytes |
@@ -49,6 +49,8 @@ Questions
 | quick | 100000 | 0.346946 seconds | 8.808594 Mbytes |
 | quick | 1000000 | 4.825265 seconds | 77.472656 Mbytes |
 | quick | 10000000 | 76.431381 seconds | 764.117188 Mbytes |
+```
+
 
 3. The fastest algorithm was qsort, followed by merge then quick, and lastly stl. However, both merge and quick sort used the least amount of memory, followed by stl and then lastly by qsort. The reason why qsort and stl used up more memory was because they used an array/vector. 
 
