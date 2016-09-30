@@ -23,52 +23,55 @@ void quick_sort(List &l, bool numeric) {
 
 Node *qsort(Node *head, CompareFunction compare) {
     //handle base case
-    if(head->next == nullptr) { return head; }   
+    if(head->next == nullptr ) { return head; }   
     //divide
     Node* left=nullptr;
     Node* right=nullptr;
-    partition(head, head, left, right,compare);
+    partition(head->next, head, left, right,compare);
     //conquer
-    qsort(head, compare);
-    //combine
-    head = concatenate(left, right);
+    if(left!=nullptr)  { left=qsort(left, compare); }
+    if(right!=nullptr) { right=qsort(right, compare); }
+
+    //add head to right
+    head->next=right;
+    right=head;
+
+    head=concatenate(left, right);
     return head;
 }
 
 void partition(Node *head, Node *pivot, Node *&left, Node *&right, CompareFunction compare) {
     Node* curr;
-    Node* temp;
-    Node* next;
+    Node* toNext;
     curr = head;
     //scan the list, prepend to 'left' or 'right' depending on the result of CompareFunction
     while( curr!=nullptr ){
-        next = curr->next;
-        std::cout<<"before if"<<std::endl;
+        toNext = curr->next;
         if( compare(curr, pivot) ){
-            temp=curr;
-            std::cout<<"inside if comparison"<<std::endl;
-            temp->next = left; left = temp;
+            curr->next = left; left = curr;
         }
         else if( compare(pivot, curr) ){
-            temp=curr;
-            std::cout<<"inside else comparison"<<std::endl;
-            temp->next = right; right = temp;
+            curr->next = right; right = curr;
         }
-        else if( pivot==curr ){
-        }
-        curr = next;
+        else if(pivot==curr){}
+        curr = toNext;
     }
 }
 
 Node *concatenate(Node *left, Node *right) {
     Node* curr;
     curr = left;
-    //traverse left sublist until the end
-    while(curr->next == nullptr){
-        curr = curr->next;
+    //traverse left sublist until the end, then connect end of left to right
+    if(left!=nullptr){
+        while(curr->next != nullptr){
+            curr = curr->next;
+        }
+        curr->next = right;
+        return left;
     }
-    curr->next = right;
-    return left;
+    else{
+        return right;
+    }
 }
 
 // vim: set sts=4 sw=4 ts=8 expandtab ft=cpp:
