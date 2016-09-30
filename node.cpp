@@ -8,11 +8,11 @@
 using namespace std;
 
 bool node_number_compare(const Node *a, const Node *b) {
-    return (a->number < b->number);
+    return (a->number <= b->number);
 }
 
 bool node_string_compare(const Node *a, const Node *b) {
-    return (a->string < b->string);
+    return (a->string <= b->string);
 }
 
 int void_number_compare(const void *a, const void *b) {
