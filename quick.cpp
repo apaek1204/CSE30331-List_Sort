@@ -25,8 +25,8 @@ Node *qsort(Node *head, CompareFunction compare) {
     //handle base case
     if(head->next == nullptr) { return head; }   
     //divide
-    Node* left;
-    Node* right;
+    Node* left=nullptr;
+    Node* right=nullptr;
     partition(head, head, left, right,compare);
     //conquer
     qsort(head, compare);
@@ -38,26 +38,25 @@ Node *qsort(Node *head, CompareFunction compare) {
 void partition(Node *head, Node *pivot, Node *&left, Node *&right, CompareFunction compare) {
     Node* curr;
     Node* temp;
+    Node* next;
     curr = head;
     //scan the list, prepend to 'left' or 'right' depending on the result of CompareFunction
     while( curr!=nullptr ){
+        next = curr->next;
         std::cout<<"before if"<<std::endl;
         if( compare(curr, pivot) ){
             temp=curr;
             std::cout<<"inside if comparison"<<std::endl;
-            if(left==nullptr){ left=temp;}
-            else{ temp->next = left; left = temp; }
+            temp->next = left; left = temp;
         }
         else if( compare(pivot, curr) ){
             temp=curr;
             std::cout<<"inside else comparison"<<std::endl;
-            if(right==nullptr){ right=temp; }
-            else{ temp->next = right; right = temp; }
+            temp->next = right; right = temp;
         }
         else if( pivot==curr ){
         }
-        curr = curr->next;
-        std::cout<<curr->string<<std::endl;
+        curr = next;
     }
 }
 
