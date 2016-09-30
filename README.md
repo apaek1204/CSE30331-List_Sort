@@ -11,17 +11,12 @@ This is a simple implementation of the Unix [sort] utility that works on
 Questions
 ---------
 
-1.    |  algorithm  |    worst   |  average   |    best    |
-      
-      |---|---|---|---|
-      
-      |     STL     |  O(nlogn)  |  O(nlogn)  |  O(nlogn)  | 
-      
-      |    qsort    |  O(nlogn0  |  O(nlogn)  |  O(nlogn)  | 
-      
-      |  merge sort |  O(nlogn)  |  O(nlogn)  |  O(nlogn)  |
-      
-      | quick sort  |  O(n^2)    |  O(nlogn)  |  O(nlogn)  |
+1.  |  algorithm  |    worst   |  average   |    best    |  
+|---|---|---|---|      
+|     STL     |  O(nlogn)  |  O(nlogn)  |  O(nlogn)  |       
+|    qsort    |  O(nlogn0  |  O(nlogn)  |  O(nlogn) | 
+|  merge sort |  O(nlogn)  |  O(nlogn)  |  O(nlogn)  |      
+| quick sort  |  O(n^2)    |  O(nlogn)  |  O(nlogn)  |
 
 
 2. | Mode    | Size  | Elapsed Time  | Memory    |
