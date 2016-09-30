@@ -60,3 +60,7 @@ Questions
     Theoretically all the algorithms have an average of O(nlogn) time, so should be similar in elapsed time. However, certain algorithm were significcantly faster, indicating that actual performance depends on how the algorithms were implemented and what type of data structure was used as the container.
 
     According to our results, merge sort seems to be the best because it was significantly faster than both STL and quick sort and significantly more memory efficient than qsort. By balancing these two resources, we get the best sorting algorithm. However, it should be noted that merge sort is difficult to implement efficiently for containers such as arrays, and therefore these circumstances should be considered.
+    
+    Individual contributions:
+    
+    Emily did the stl, list, and quick sort. Andrew did merge, qsort and README.
