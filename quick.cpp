@@ -53,7 +53,7 @@ void partition(Node *head, Node *pivot, Node *&left, Node *&right, CompareFuncti
         else if( compare(pivot, curr) ){
             curr->next = right; right = curr;
         }
-        else if(pivot==curr){}
+        else if( (pivot->string)==(curr->string) ){ curr->next = right; right = curr; }
         curr = toNext;
     }
 }
