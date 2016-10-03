@@ -63,4 +63,4 @@ Questions
     
     Individual contributions:
     
-    Emily did the stl, list, and quick sort. Andrew did merge, qsort and README.
+    Emily Park (epark3) did the stl, list, and quick sort. Andrew Paek (apaek1) did merge, qsort and README.
